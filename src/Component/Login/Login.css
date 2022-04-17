@@ -1,0 +1,25 @@
+.form-wrapper {
+  text-align: center;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  padding: 60px 0;
+}
+.form-wrapper input {
+  width: 300px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+.login-btn {
+  background-color: #3a52d8;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+}
+.navigate-signup {
+  text-align: center;
+}
+.navigate-signup-link {
+  text-decoration: none;
+  color: rgb(0, 60, 255);
+}

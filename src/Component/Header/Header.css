@@ -1,0 +1,31 @@
+.navactive {
+  color: red;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.navinactive {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+.navactive:not(:last-child) {
+  margin-right: 15px;
+}
+.navinactive:not(:last-child) {
+  margin-right: 15px;
+}
+.nav-wrapper {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #3a52d8;
+}
+.signout-btn {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background: none;
+  border: none;
+}
