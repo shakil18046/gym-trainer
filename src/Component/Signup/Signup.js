@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import auth from "../../Firebase_init";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import "./Signup.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { sendEmailVerification } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +17,10 @@ const Signup = () => {
   const [customerror, setError] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+  const [sendEmailVerification, sending] = useSendEmailVerification(auth);
   const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   // get email value
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -26,7 +36,8 @@ const Signup = () => {
   const handleConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
   };
-  const handleSignup = (e) => {
+  // signup and create new user
+  const handleSignup = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       setError("your password did not match");
@@ -36,13 +47,17 @@ const Signup = () => {
       setError("your password is to short");
       return;
     }
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    await sendEmailVerification();
+    alert("sent");
+    toast("sent email");
   };
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
   return (
     <div>
+      <ToastContainer />
       <form className="form-wrapper" onSubmit={handleSignup}>
         <input
           onBlur={handleEmail}
@@ -66,7 +81,7 @@ const Signup = () => {
           required
         ></input>
         <p className="password-error-one">{customerror}</p>
-        <input className="login-btn" type="submit" value="Login"></input>
+        <input className="login-btn" type="submit" value="Signup"></input>
       </form>
       <p className="navigate-Login">
         Already register please{" "}

@@ -10,6 +10,8 @@ import Login from "./Component/Login/Login";
 import Signup from "./Component/Signup/Signup";
 import "./";
 import RequierAuth from "./Component/RequierAuth/RequierAuth";
+import NotFoundPage from "./Component/NotFoundPage/NotFoundPage";
+import Footer from "./Component/Footer/Footer";
 // import RequierAuth from "./Component/RequierAuth/RequierAuth";
 function App() {
   return (
@@ -29,7 +31,10 @@ function App() {
         <Route path="/AboutMe" element={<AboutMe></AboutMe>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/Signup" element={<Signup></Signup>}></Route>
+
+        <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

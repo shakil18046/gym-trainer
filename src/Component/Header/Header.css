@@ -3,7 +3,6 @@
   text-decoration: none;
   font-size: 18px;
   font-weight: 600;
-  color: #ffffff;
 }
 .navinactive {
   color: #ffffff;
@@ -28,4 +27,16 @@
   color: #ffffff;
   background: none;
   border: none;
+}
+@media screen and (max-width: 768px) {
+  .navactive,
+  .navinactive {
+    font-size: 14px;
+  }
+  .navactive:not(:last-child) {
+    margin-right: 8px;
+  }
+  .navinactive:not(:last-child) {
+    margin-right: 8px;
+  }
 }

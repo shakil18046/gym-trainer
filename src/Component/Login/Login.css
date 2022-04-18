@@ -23,3 +23,42 @@
   text-decoration: none;
   color: rgb(0, 60, 255);
 }
+.googlesigninbtn {
+  padding: 6px 25px 18px 25px;
+  background-color: #3a52d8;
+  border: 0;
+  color: #ffffff;
+  font-size: 16px;
+}
+.googlesigninbtn img {
+  width: 30px;
+  transform: translateY(10px);
+}
+.googlesigninbtn-wrapper {
+  text-align: center;
+}
+.border {
+  width: 20%;
+  height: 1px;
+  background-color: rgb(48, 45, 45);
+  display: block;
+  padding: 0 10px;
+}
+.border-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.forgotPassword-wrapper {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.forgotPassword-wrapper button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  color: #3a52d8;
+  cursor: pointer;
+}

@@ -1,11 +1,7 @@
 import React from "react";
 
 const Checkout = () => {
-  return (
-    <div>
-      <h1>this is checkout page</h1>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Checkout;

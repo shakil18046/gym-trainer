@@ -28,3 +28,16 @@
 .hero-btn-wrapper {
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .hero-heading {
+    font-size: 30px;
+  }
+  .hero-area-wrapper {
+    height: 50vh;
+  }
+  .hero-btn {
+    color: #ffffff;
+    padding: 14px 25px;
+    margin-top: 10px;
+  }
+}
